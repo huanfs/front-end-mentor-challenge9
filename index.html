@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script src="https://kit.fontawesome.com/cb75456a03.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <section class="nav-links">
+        <article>
+          <img src="images/logo.svg" alt="logo sneakers">
+          <ul class="slide-menu"></ul>
+        </article>
+      <a href="#">Collections</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      </section>
+      <section class="cart-user">
+        <img src="images/icon-cart.svg" alt="cart-shopping">
+        <img src="images/image-avatar.png" alt="your avatar">
+      </section>
+    </header>
+    <!-- HEADER^ -->
+    <section class="container">
+      <section class="product-view">
+        <!-- EXIBIÇÃO DO PRODUTO NA DIV MAIOR -->
+        <div id="show-product">
+          <img src="images/image-product-1.jpg" alt="product view">
+        </div>
+        <!-- LISTA DE PRODUTOS EM MINIATURA -->
+      <section id="mini-products">
+        <img src="images/image-product-2-thumbnail.jpg" alt="">
+        <img src="images/image-product-3-thumbnail.jpg" alt="">
+        <img src="images/image-product-4-thumbnail.jpg" alt="">
+        <img src="images/image-product-1-thumbnail.jpg" alt="">
+      </section>
+      </section>
+      <!-- SEÇÃO A RIDEIRA COM INFORMAÇÕES DOS PRODUTOS -->
+      <section class="product-infos">
+        <h3>Sneaker Company</h3>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <!-- SEÇÃO DE PREÇOS -->
+        <div class="prices">
+          <!-- SEÇÃO DISCONTO -->
+          <div class="discount">
+            <h2>$125.00</h2>
+            <h6>50%</h6>
+          </div>
+          <!-- PREÇO ANTIGO -->
+          <p>$250.00</p>
+        </div>
+        <!-- SELEÇÃO DA QUANTIDADE DE PRODUTOS -->
+        <div class="select-qtd">
+          <div class="controls">
+            <span><img src="images/icon-minus.svg" alt="menos"></span>
+            <div>0</div>
+            <span><img src="images/icon-plus.svg" alt="mais"></span>
+          </div>
+          <button><i class="fa-solid fa-cart-shopping"></i>add to cart</button>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="assets/script.js"></script>
+</body>
+</html>
