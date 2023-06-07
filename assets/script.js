@@ -1,11 +1,10 @@
 let wid = window.innerWidth;
-let btnIncrementar = document.querySelectorAll(".select-qtd span")[1];
-let btnDiminuir = document.querySelectorAll(".select-qtd span")[0];
+let btnIncrementar = document.querySelectorAll(".controls div")[2];
+let btnDiminuir = document.querySelectorAll(".controls div")[0];
 let count = 0;
+let opCl = 0;
 btnIncrementar.addEventListener("click", adicionar);
 btnDiminuir.addEventListener("click", subtrair);
-//-----
-let btn = document.querySelector("button").addEventListener("click", menu);
 //FUNÇÃO DE MOSTRAR E APAGAR MENU HAMBURGUER
 function menu(){
     if(wid<=680){
@@ -13,36 +12,61 @@ function menu(){
        let menuHamburguer = document.createElement("img");
        menu.appendChild(menuHamburguer);
        menuHamburguer.src="./images/icon-menu.svg";
+       menuHamburguer.style.zIndex="1000";
        menuHamburguer.addEventListener("click",openClose);
     }
 }
+function childTo(){
+    let navigation = document.querySelectorAll(".nav-links a");
+    let menuSlide= document.querySelector(".slide-menu");
+    if(wid<=680){
+        let menuList = document.createElement("div");
+        navigation.forEach(function(navItem) {
+            menuSlide.appendChild(navItem);
+            navItem.style.color="var(--veryDarkBlue)";
+        });
+    }
+}
+// function childTo(){
+//     let navigation = document.querySelectorAll(".nav-links a");
+//     let menuSlide= document.querySelector(".slide-menu");
+//     if(wid<=680){
+//         let menuList = document.createElement("div");
+//         for(i in navigation){
+//             menuSlide.appendChild(navigation[i]);
+//             navigation[i].style.color="var(--veryDarkBlue)";
+//         }
+//     }
+// }
 //FUNÇÃO ABRIR E FECHAR O MENU
-function openClose(icon){
+function openClose(){
     let menuHamburguer = document.querySelectorAll("article img")[1];
     let slideMenu = document.querySelector(".slide-menu");
-    if(menuHamburguer.src="./images/icon-menu.svg"){
-        console.log(menuHamburguer.src);
+    //adicionar o efeito de escurecimento do plano de fundo
+    //ao abrir o menu
+    if(opCl==0){
         slideMenu.style.left="0px";
-        menuHamburguer.src="";//AQUI
+        menuHamburguer.src="./images/icon-close.svg";
+        opCl++;
     }
-    else if(menuHamburguer.src="./images/icon-close.svg"){
+    else if(opCl==1){
         slideMenu.style.left="-300px";
-        menuHamburguer.src="";//AQUI
+        menuHamburguer.src="./images/icon-menu.svg";
+        opCl--;
     }
 }
 // FUNÇÕES DE ADIÇÃO E SUBTRAÇÃO
 function adicionar(){
-    let qtd = document.querySelectorAll(".select-qtd div");
-    console.log(typeof(qtd));
+    let qtd = document.querySelectorAll(".controls div");
         count++;
-        qtd[0].innerHTML=count;
+        qtd[1].innerHTML=count;
+        console.log(qtd[1]);
 }
 function subtrair(){
-    let qtd = document.querySelectorAll(".select-qtd div");
-    if(qtd.innerHTML!=0){
+    let qtd = document.querySelectorAll(".controls div");
+    if(qtd[1].innerHTML!=0){
         count--;
-        qtd[0].innerHTML=count;
-        
+        qtd[1].innerHTML=count;
     }
     else{
         qtd.innerHTML=0;
