@@ -48,12 +48,20 @@ function openClose(){
         slideMenu.style.left="0px";
         menuHamburguer.src="./images/icon-close.svg";
         opCl++;
+        slideMenu.addEventListener("click", menuBlur);
     }
     else if(opCl==1){
         slideMenu.style.left="-300px";
         menuHamburguer.src="./images/icon-menu.svg";
         opCl--;
     }
+}
+function menuBlur(){
+        let menuHamburguer = document.querySelectorAll("article img")[1];
+        let slideMenu = document.querySelector(".slide-menu");
+        slideMenu.style.left="-300px";
+        menuHamburguer.src="./images/icon-menu.svg";
+        opCl--;
 }
 // FUNÇÕES DE ADIÇÃO E SUBTRAÇÃO
 function adicionar(){
@@ -74,5 +82,4 @@ function subtrair(){
 }
 
 
-// MUDAR O SRC DA IMAGEM MENU DE ACORDO COM O MENU
-// FECHADO OU ABERTO
+//CRIAR O CARROUSELL DE EXIBIÇÃO
