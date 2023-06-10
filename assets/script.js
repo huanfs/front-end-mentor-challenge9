@@ -1,8 +1,10 @@
 let wid = window.innerWidth;
+let btn = document.querySelectorAll(".cart-user img")[0];
 let btnIncrementar = document.querySelectorAll(".controls div")[2];
 let btnDiminuir = document.querySelectorAll(".controls div")[0];
 let count = 0;
 let opCl = 0;
+btn.addEventListener("click", openCart);
 btnIncrementar.addEventListener("click", adicionar);
 btnDiminuir.addEventListener("click", subtrair);
 //FUNÇÃO DE MOSTRAR E APAGAR MENU HAMBURGUER
@@ -27,17 +29,6 @@ function childTo(){
         });
     }
 }
-// function childTo(){
-//     let navigation = document.querySelectorAll(".nav-links a");
-//     let menuSlide= document.querySelector(".slide-menu");
-//     if(wid<=680){
-//         let menuList = document.createElement("div");
-//         for(i in navigation){
-//             menuSlide.appendChild(navigation[i]);
-//             navigation[i].style.color="var(--veryDarkBlue)";
-//         }
-//     }
-// }
 //FUNÇÃO ABRIR E FECHAR O MENU
 function openClose(){
     let menuHamburguer = document.querySelectorAll("article img")[1];
@@ -80,6 +71,27 @@ function subtrair(){
         qtd.innerHTML=0;
     }
 }
+//FUNÇÃO ABRE E FECHA O CARRINHO
+function openCart(){
+    let cart = document.getElementById("cart");
+    if(cart.style.display=="none"){
+        cart.style.display="flex";
+    }
+    else{
+        cart.style.display="none";
+    }
+}
+//FUNÇÃO ADICIONAR AO CARRINHO
+// function addToCart(){
+//     let basket = document.querySelector("#cart-contents");
+//     let empty = document.querySelector("#empty");
+//     empty.remove();
+//     let details = document.createElement("div");
+//     let img = document.createElement("img");
+//     let title = document.createElement("h2");
+//     //TRABALHAR NESTA FUNÇÃO PARA EXIBIR OS ITENS DENTRO DO CARRINHO
+//     let button = document.createElement("button");
+// }
 
 
 //CRIAR O CARROUSELL DE EXIBIÇÃO
