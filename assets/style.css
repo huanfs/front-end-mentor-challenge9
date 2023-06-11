@@ -193,6 +193,12 @@ header .cart-user{
     outline:0;
     border-radius:5px;
 }
+.controls{
+    width:50%;
+    display:var(--dFlex);
+    justify-content:space-between;
+
+}
 .select-qtd span:hover, .select-qtd button:hover{
     cursor:pointer;
     opacity:0.5;
@@ -209,8 +215,10 @@ button img{
     right:20px;
     display:flex;
     flex-direction:column;
+    border:1px solid var(--grayishBlue);
     border-radius:20px;
     background-color:var(--white);
+    box-shadow:2px 2px 4px var(--grayishBlue);
     display:none;
 }
 #cart-title{
@@ -258,9 +266,8 @@ button img{
 
 @media screen and (max-width:680px){
     .container{
-        display:none;
+        display:flex;
     }
-    /* TIRAR O DISPLAY NONE DE CONTAINER */
     main{
         width:100vw;
     }
@@ -316,7 +323,7 @@ button img{
         gap:1em;
     }
     .controls{
-        display:flex;
+        display:var(--dFlex);
         justify-content:space-between;
         width:80%;
     }
@@ -330,5 +337,3 @@ button img{
         width:90%;
     }
 }
-
-
