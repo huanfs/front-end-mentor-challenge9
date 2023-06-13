@@ -2,11 +2,16 @@ let wid = window.innerWidth;
 let btn = document.querySelectorAll(".cart-user img")[0];
 let btnIncrementar = document.querySelectorAll(".controls div")[2];
 let btnDiminuir = document.querySelectorAll(".controls div")[0];
+let product = document.querySelectorAll("#mini-products img");
 let count = 0;
 let opCl = 0;
 btn.addEventListener("click", openCart);
 btnIncrementar.addEventListener("click", adicionar);
 btnDiminuir.addEventListener("click", subtrair);
+for(let i = 0;i<product.length; i++){
+    product[i].addEventListener("click", showProduct);
+    // product[i].addEventListener("click", styleItem);
+}
 //FUNÇÃO DE MOSTRAR E APAGAR MENU HAMBURGUER
 function menu(){
     if(wid<=680){
@@ -59,7 +64,6 @@ function adicionar(){
     let qtd = document.querySelectorAll(".controls div");
         count++;
         qtd[1].innerHTML=count;
-        console.log(qtd[1]);
 }
 function subtrair(){
     let qtd = document.querySelectorAll(".controls div");
@@ -82,16 +86,47 @@ function openCart(){
     }
 }
 //FUNÇÃO ADICIONAR AO CARRINHO
-// function addToCart(){
-//     let basket = document.querySelector("#cart-contents");
-//     let empty = document.querySelector("#empty");
-//     empty.remove();
-//     let details = document.createElement("div");
-//     let img = document.createElement("img");
-//     let title = document.createElement("h2");
-//     //TRABALHAR NESTA FUNÇÃO PARA EXIBIR OS ITENS DENTRO DO CARRINHO
-//     let button = document.createElement("button");
-// }
+//adicionar a numeração de quantos itens foram adicionados
+function addToCart(){
+    let qtd = document.querySelectorAll(".controls div")[1];
+    if(qtd.innerText!="0"){
+        let basket = document.querySelector("#cart-contents");
+     let empty = document.querySelector("#empty");
+     empty.style.display="none";
+     let details = document.createElement("div");
+     let img = document.createElement("img");
+     let title = document.createElement("h2");
+     let trash = document.createElement("i");
+     trash.setAttribute("class","fa-solid fa-trash");
+     let button = document.createElement("button");
+     button.innerHTML="CheckOut"
+     title.innerHTML="Fall Limited Edition Sneakers";
+     img.src="images/image-product-1-thumbnail.jpg";
+     for(let i =0;i<=4;i++){
+        basket.appendChild(details);
+        details.appendChild(img);
+        details.appendChild(title);
+        details.appendChild(trash);
+        basket.appendChild(button);
+     }
+    }  
+ }
+ function showProduct(product){
+    let show = document.querySelectorAll("#show-product img")[0];
+    let source = product.target.src;
+    show.src=source;
+ }
 
+//APLICAR BORDA E DESFOQUE NO ITEM E CLICADO E AO CLICAR EM OUTRO DESFAZER ESTA ESTILIZAÇÃO
+//  function styleItem(item){
+//     if(item==true){
+//         item.target.style.border="2px solid var(--orange)";
+//         item.target.style.opacity="0.7";
+//     }
+//     else{
+//         item.target.style.border="5px solid green";
+//         item.target.style.opacity="1";
+//     }
+//  }
 
 //CRIAR O CARROUSELL DE EXIBIÇÃO
