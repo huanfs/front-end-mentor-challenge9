@@ -219,6 +219,7 @@ button img{
     border-radius:20px;
     background-color:var(--white);
     box-shadow:2px 2px 4px var(--grayishBlue);
+    z-index:1000;
     display:none;
 }
 #cart-title{
@@ -382,5 +383,13 @@ button img{
         position:absolute;
         top:50%;
         left:5%;
+    }
+}
+@media screen and (max-width:410px){
+    #show-product::after{
+        top:35%;
+    }
+    #show-product::before{
+        top:35%;
     }
 }
