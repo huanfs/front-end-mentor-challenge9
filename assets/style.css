@@ -319,6 +319,8 @@ button img{
         padding:0;
     }
     #show-product{
+        display:flex;
+        align-items:center;
         width:100%;
         padding:0;
     }
@@ -359,5 +361,26 @@ button img{
     #cart{
         top:80px;
         width:90%;
+    }
+    #show-product::before, #show-product::after{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:50px;
+        height: 50px;
+        background-color:var(--white);
+        border-radius:50%;
+    }
+    #show-product::after{
+        content:url("../images/icon-next.svg");
+        position:absolute;
+        top:50%;
+        right:5%;
+    }
+    #show-product::before{
+        content:url("../images/icon-previous.svg");
+        position:absolute;
+        top:50%;
+        left:5%;
     }
 }
