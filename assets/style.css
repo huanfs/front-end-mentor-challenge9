@@ -239,6 +239,8 @@ button img{
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    overflow-y:scroll;
+    scroll-behavior:smooth;
 }
 #cart-contents span{
     font-weight:bolder;
@@ -257,12 +259,13 @@ button img{
     cursor:pointer;
 }
 #cart-contents button{
+    display:inline-block;
     width:90%;
-    height:40px;
+    line-height:40px;
     border:none;
     outline:0;
     border-radius:10px;
-    margin-top:20px;
+    margin:20px 0;
     background-color:var(--orange);
     color:var(--white);
     cursor:pointer;
