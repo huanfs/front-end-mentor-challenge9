@@ -130,3 +130,9 @@ function addToCart(){
 //  }
 
 //CRIAR O CARROUSELL DE EXIBIÇÃO
+// function slide(){
+//     if(wid<=680){
+//         let btnNext = document.querySelectorAll("#product-show img:after")[0];
+//         console.log(btnNext);
+//     }
+// }
