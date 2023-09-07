@@ -136,3 +136,7 @@ function addToCart(){
 //         console.log(btnNext);
 //     }
 // }
+function backFoward(){
+    let content = document.querySelector("#show-product img");
+    console.log(content);
+}

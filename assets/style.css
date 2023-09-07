@@ -23,23 +23,23 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 main{
+    height:100vh;
     width:85%;
     display:var(--dFlex);
     flex-direction:column;
 }
 /* cabeçalho */
 header{
-    padding:1em 0 0 0;
+    height:80px;
     display:var(--dFlex);
     justify-content:space-between;
     border-bottom:1px solid var(--grayishBlue);
 }
 header .nav-links{
-    height:20vh;
+    height:17vh;
     display:var(--dFlex);
     align-items:baseline;
-    gap:2em;
-    padding-top:3.5em;
+    padding-top:1.8em;
 }
 .nav-links article{
     display:flex;
@@ -273,6 +273,7 @@ button img{
 @media screen and (max-width:950px){
     header .nav-links{
         gap:0.8em;
+        z-index:1000;
     }
     #show-product img{
         width:80%;
