@@ -91,8 +91,10 @@ header .cart-user{
 .cart-user img:hover{
     cursor:pointer;
 }
-.cart-user img:last-child:hover{
+.cart-user img:last-child{
     border-radius:30px;
+}
+.cart-user img:last-child:hover{
     border:2px solid var(--orange);
 }
 

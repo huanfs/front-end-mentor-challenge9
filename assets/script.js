@@ -78,6 +78,8 @@ function subtrair(){
 //FUNÇÃO ABRE E FECHA O CARRINHO
 function openCart(){
     let cart = document.getElementById("cart");
+    let trash_icon = document.querySelector("#cart-contents div svg");
+    trash_icon.addEventListener("click", removeFromCart);
     if(cart.style.display=="none"){
         cart.style.display="flex";
     }
@@ -111,10 +113,20 @@ function addToCart(){
      }
     }  
  }
- function showProduct(product){
+ function removeFromCart(t){
+    t.target.parentNode.remove()
+ }
+ function showProduct(i){
     let show = document.querySelectorAll("#show-product img")[0];
-    let source = product.target.src;
+    let source = i.target.src;
     show.src=source;
+    product.forEach((img)=>{
+        img.style.border="none";
+    })
+    i.target.style.border="2px solid var(--orange)";
+    addToCart(source);
+    //criar a função que abre o carringo mostrabndo a
+    //imagem salva nesta variavel source
  }
 
 //APLICAR BORDA E DESFOQUE NO ITEM E CLICADO E AO CLICAR EM OUTRO DESFAZER ESTA ESTILIZAÇÃO
